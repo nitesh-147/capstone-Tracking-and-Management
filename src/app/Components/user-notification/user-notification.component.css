@@ -1,0 +1,13 @@
+.main{
+    min-height: 540px;
+    background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
+    padding:20px 70px;
+    /* overflow: scroll; */
+}
+.bold{
+    font-weight: 600;
+}
+tr{
+    height:50px;
+    border-bottom: 1px solid;
+}

@@ -1,0 +1,15 @@
+<div class="main">
+    <table class="table table-bordered">
+        <tr *ngFor="let notification of notificationsList" [ngClass]="notification.status==='unseen'? 'bold':''">
+            <td>
+                {{notification.message}}
+            </td>
+            <td>
+                {{notification.createdAt}}
+            </td>
+            <td *ngIf="notification.status==='unseen'">
+                <button class="btn btn-secondary" (click)="unreadNotification(notification)">Mark as Read</button>
+            </td>
+        </tr>
+    </table>
+</div>

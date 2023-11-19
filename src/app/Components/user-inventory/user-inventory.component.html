@@ -1,0 +1,44 @@
+<div class="main">
+    <form (ngSubmit)="onAddItem()">
+        <input type="text" name="name" placeholder="Enter the Item name" [(ngModel)]="name">
+        <input type="number" name="quantity" placeholder="Enter the item quantity" [(ngModel)]="quantity">
+        <button class="btn btn-warning" [disabled]="!name || !quantity">Add Items</button>
+    </form>
+    <div class="inventory">
+        <div class="otherInfo">
+            <h1>Your Inventory</h1>
+            <div>
+                <p>Location: {{myInventory?.location}}</p>
+                <form>
+                    <select name="destination">
+                        <option value="bbsr">BBSR</option>
+                        <option value="blr">BLR</option>
+                        <option value="mum">MUMBAI</option>
+                        <option value="del">DELHI</option>
+                    </select>
+                    <button class="btn btn-warning">Transfer Inventory</button>
+                </form>
+            </div>
+        </div>
+        <div class="items">
+            <div class="item" *ngFor="let item of inventoryItems; index as i">
+                <div class="inner" *ngIf="2*i<inventoryItems.length">
+                    <p>
+                        <span>
+                            {{inventoryItems[2*i].name}} : {{inventoryItems[2*i].quantity}}
+                        </span>
+                         <button class="btn btn-danger" (click)="onDelete(inventoryItems[2*i].name,inventoryItems[2*i].quantity)"> Remove item</button>
+                    </p>
+                </div>
+                <div class="inner" *ngIf="2*i+1<inventoryItems.length">
+                    <p>
+                        <span>
+                            {{inventoryItems[2*i+1].name}} : {{inventoryItems[2*i+1].quantity}}
+                        </span>
+                        <button class="btn btn-danger" (click)="onDelete(inventoryItems[2*i+1].name,inventoryItems[2*i+1].quantity)">Remove Item</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

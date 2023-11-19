@@ -1,0 +1,22 @@
+.main{
+    min-height: 540px;
+    background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
+    padding:20px;
+    overflow-y: scroll;
+}
+tr{
+    height:50px;
+}
+
+.blue td{
+    background-color: skyblue;
+}
+
+.orange td{
+    background-color: lightsalmon;
+}
+
+th{
+    background-color: rgb(42, 41, 41);
+    color: white;
+}

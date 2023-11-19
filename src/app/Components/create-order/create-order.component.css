@@ -1,0 +1,31 @@
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width:400px;
+    background-color: blanchedalmond;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: fit-content;
+}
+
+.main{
+    padding:50px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
+    min-height: 540px;
+}
+
+input{
+    height: 40px;
+    border-radius: 10px;
+    padding-left:10px;
+}

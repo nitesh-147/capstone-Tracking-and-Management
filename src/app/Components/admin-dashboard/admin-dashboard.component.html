@@ -1,0 +1,46 @@
+<div class="pos-f-t header bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" (click)="drawer.toggle()"></span>
+        </button>
+    </nav>
+    <div class="text-white user">
+        {{user.userName}} <mat-icon routerLink="profile" style="cursor: pointer;">account_circle</mat-icon>
+    </div>
+</div>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start" class="sidebar">
+        <nav>
+            <ul class="navSide">
+                <li routerLink="Orders" routerLinkActive="active">
+                    <mat-icon>add</mat-icon> Orders
+                </li>
+                <li routerLink="Inventories" routerLinkActive="active">
+                    <mat-icon>info</mat-icon> Inventory
+                </li>
+                <li routerLink="TransferRequest" routerLinkActive="active">
+                    <mat-icon>info</mat-icon> Transfer Requests
+                </li>
+                <li routerLink="Deliveries" routerLinkActive="active">
+                    <mat-icon>info</mat-icon> Pending Deliveries
+                </li>
+                <li routerLink="Warehouses" routerLinkActive="active">
+                    <mat-icon>info</mat-icon> WareHouse
+                </li>
+            </ul>
+        </nav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;height: 540px; overflow-y: scroll;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright: Capstone Project
+    </div>
+    <!-- Copyright -->
+  </footer>

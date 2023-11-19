@@ -1,0 +1,20 @@
+.main{
+    padding:20px;
+    background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
+    min-height: 540px;
+}
+
+.blue td{
+    background-color: skyblue;
+}
+
+.orange td{
+    background-color: lightsalmon;
+}
+th{
+    background-color: darkgrey;
+}
+tr{
+    height:50px;
+    align-items: center;
+}

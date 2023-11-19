@@ -1,0 +1,44 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.user{
+    display: flex;
+    column-gap: 5px;
+}
+.navSide{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding-left: 0;
+}
+
+.navSide li{
+    display: flex;
+}
+
+.sidebar{
+    padding:20px;
+    background-color: rgb(115, 110, 110);
+    color:whitesmoke;
+}
+
+li{
+    cursor: pointer;
+    padding:10px;
+    border-radius: 10px;
+}
+
+li:hover{
+    background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
+    color: black;
+}
+
+.active{
+    background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
+    color: black;
+}

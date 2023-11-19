@@ -1,0 +1,28 @@
+<div class="main">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>OrderId</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let order of ordersList; index as i" [ngClass]="i%2==0? 'blue':'orange'">
+            <tr *ngIf="order.orderStatus!=='Delivered'">
+                <td>
+                    {{i+1}}
+                </td>
+                <td>
+                    {{order.id}}
+                </td>
+                <td>
+                    {{order.orderStatus}}
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="onUpdate(order)">Update Delivery</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,43 @@
+<div class="pos-f-t header bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" (click)="drawer.toggle()"></span>
+        </button>
+    </nav>
+    <div class="text-white user">
+        {{userName}} <mat-icon routerLink="profile" style="cursor: pointer;">account_circle</mat-icon>
+    </div>
+</div>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start" class="sidebar">
+        <nav>
+            <ul class="navSide">
+                <li routerLink="create-order" routerLinkActive="active">
+                    <mat-icon>add</mat-icon> Create Order
+                </li>
+                <li routerLink="orders" routerLinkActive="active">
+                    <mat-icon>info</mat-icon> Orders
+                </li>
+                <li routerLink="inventory" routerLinkActive="active">
+                    <mat-icon>add</mat-icon> Inventory
+                </li>
+                <li routerLink="notification" routerLinkActive="active">
+                    <mat-icon>dashboard</mat-icon> Notification
+                </li>
+            </ul>
+        </nav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="height: 540px; overflow-y: scroll;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(53, 52, 52, 0.2);">
+        © 2020 Copyright: Capstone Project
+    </div>
+    <!-- Copyright -->
+  </footer>

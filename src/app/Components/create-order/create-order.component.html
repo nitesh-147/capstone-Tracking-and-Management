@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="form">
+        <h1>Create Order</h1>
+        <form [formGroup]="orderForm" (submit)="onOrder()">
+            <input type="text" formControlName="productName" placeholder="Enter the product name">
+            <input type="number" formControlName="quantity" min="0" max="10" placeholder="Enter the quantity">
+            <input type="text" formControlName="recipentName" placeholder="Enter the Recipent name">
+            <input type="text" formControlName="address" placeholder="Enter the detailed address">
+            <input type="submit" value="create order" class="btn btn-primary">
+        </form>
+    </div>
+</div>

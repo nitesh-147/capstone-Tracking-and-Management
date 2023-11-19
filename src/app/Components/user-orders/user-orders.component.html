@@ -1,0 +1,39 @@
+<div class="main">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Order Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders; index as i" [ngClass]="i%2==0? 'blue':'orange'">
+               <td>
+                {{i+1}}
+               </td>
+               <td>
+                {{order.productName}}
+               </td>
+               <td>
+                {{order.quantity}}
+               </td>
+               <td>
+                {{order.orderDate}}
+               </td>
+               <td>
+                
+                {{order.orderStatus}} <span *ngIf="order.orderStatus==='Delivered'">✅</span>
+               </td>
+               <td>
+                <span *ngIf="order.orderStatus!=='Delivered'">
+                    <mat-icon style="color:red; cursor: pointer;" (click)="onDelete(order.id || '')">delete</mat-icon>
+                </span>
+               </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

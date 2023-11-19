@@ -1,0 +1,30 @@
+.main{
+    min-height: 540px;
+    background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
+    padding:20px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 20px;
+    font-size: 1.5vw;
+}
+
+.guide{
+    background-color: bisque;
+    padding:30px;
+    width:75%;
+    margin:auto;
+    border-radius: 10px;
+}
+
+li{
+    border-bottom: 1px solid;
+}
+h1{
+    text-align: center;
+}
+
