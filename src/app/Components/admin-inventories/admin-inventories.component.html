@@ -1,1 +1,31 @@
-<div class="main"></div>
+<div class="main">
+    <div class="inventory" *ngFor="let item of inventoriesList; index as j">
+        <hr>
+        <h1>Inventory {{j+1}}</h1>
+        <h2>UserId: {{item.userId}}</h2>
+        <h3>Location: {{item.location}}</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let it of item.items; index as i" [ngClass]="i%2==0?'blue':'orange'">
+                    <td>
+                        {{i+1}}
+                    </td>
+                    <td>
+                        {{it.name}}
+                    </td>
+                    <td>
+                        {{it.quantity}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</div>

@@ -3,3 +3,16 @@
     background-image: linear-gradient(rgb(244, 210, 253), rgb(192, 245, 236));
     padding:20px;
 }
+
+.blue td{
+    background-color: skyblue;
+}
+
+.orange td{
+    background-color: lightcoral;
+}
+
+th{
+    background-color: black;
+    color:white
+}
