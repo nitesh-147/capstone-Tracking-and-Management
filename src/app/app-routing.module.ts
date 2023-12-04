@@ -17,36 +17,40 @@ import { AdminPendingDeliveriesComponent } from './Components/admin-pending-deli
 import { AdminWareHousesComponent } from './Components/admin-ware-houses/admin-ware-houses.component';
 import { AdminNavigationComponent } from './Components/admin-navigation/admin-navigation.component';
 import { UserNavigationComponent } from './Components/user-navigation/user-navigation.component';
+import { hasRoleGuard } from './Guards/user-role.guard';
+import { matchRoleGuard } from './Guards/admin-role.guard';
 
 
 const routes: Routes = [
-  {path:'',component:HomepageComponent},
-  {path:'login',component:SigninFormComponent},
-  {path:'signup',component:SignupFormComponent},
+  { path: '', component: HomepageComponent },
+  { path: 'login', component: SigninFormComponent },
+  { path: 'signup', component: SignupFormComponent },
   {
-    path:'user-dashboard/:username',
-    component:UserDashboardComponent,
-    children:[
-      {path:'',component:UserNavigationComponent},
-      {path:'profile',component:ProfileComponent},
-      {path:'create-order',component:CreateOrderComponent},
-      {path:'orders',component:UserOrdersComponent},
-      {path:'inventory',component:UserInventoryComponent},
-      {path:'notification',component:UserNotificationComponent}
+    path: 'user-dashboard/:username',
+    component: UserDashboardComponent,
+    canActivate: [hasRoleGuard],
+    children: [
+      { path: '', component: UserNavigationComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'create-order', component: CreateOrderComponent },
+      { path: 'orders', component: UserOrdersComponent },
+      { path: 'inventory', component: UserInventoryComponent },
+      { path: 'notification', component: UserNotificationComponent }
     ]
   },
   {
-    path:'admin-dashboard/:username',
-    component:AdminDashboardComponent,
-    children:[
-      {path:'',component:AdminNavigationComponent},
-      {path:'profile',component:ProfileComponent},
-      {path:'Orders',component:AdminOrdersComponent},
-      {path:'Inventories',component:AdminInventoriesComponent},
-      {path:'TransferRequest',component:AdminTransferInventoryComponent},
-      {path:'Deliveries',component:AdminPendingDeliveriesComponent},
-      {path:'Warehouses',component:AdminWareHousesComponent}
-    ]
+    path: 'admin-dashboard/:username',
+    component: AdminDashboardComponent,
+    canActivate: [matchRoleGuard],
+    children: [
+      { path: '', component: AdminNavigationComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'Orders', component: AdminOrdersComponent },
+      { path: 'Inventories', component: AdminInventoriesComponent },
+      { path: 'TransferRequest', component: AdminTransferInventoryComponent },
+      { path: 'Deliveries', component: AdminPendingDeliveriesComponent },
+      { path: 'Warehouses', component: AdminWareHousesComponent }
+    ],
   }
 ];
 

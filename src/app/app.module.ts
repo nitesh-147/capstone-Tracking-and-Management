@@ -25,6 +25,7 @@ import { AdminTransferInventoryComponent } from './Components/admin-transfer-inv
 import { AdminWareHousesComponent } from './Components/admin-ware-houses/admin-ware-houses.component';
 import { UserNavigationComponent } from './Components/user-navigation/user-navigation.component';
 import { AdminNavigationComponent } from './Components/admin-navigation/admin-navigation.component';
+import { ToastrModule} from 'ngx-toastr'
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AdminNavigationComponent } from './Components/admin-navigation/admin-na
     BrowserAnimationsModule,
     MatIconModule,
     MaterialModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

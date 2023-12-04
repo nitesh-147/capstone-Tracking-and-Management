@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MustMatch } from 'src/app/Helper/must-match.validation';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
-
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-signup-form',
@@ -15,7 +15,8 @@ export class SignupFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route:Router,
-    private authService:AuthenticationService
+    private authService:AuthenticationService,
+    private toastr:ToastrService
   ) { }
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
@@ -30,11 +31,12 @@ export class SignupFormComponent implements OnInit {
   }
   onSubmit(): void {
     this.authService.userSignup(this.signupForm.value).subscribe((res)=>{
+     this.toastr.success("SignUp Successful");
      this.signupForm.reset();
      this.route.navigate(['login']);
     },
     (err)=>{
-      alert(err.error.message);
+      this.toastr.warning(err.error.message);
     }
     );
   }
